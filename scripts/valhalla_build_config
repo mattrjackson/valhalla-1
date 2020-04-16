@@ -222,6 +222,12 @@ config = {
       'max_matrix_distance': 400000.0,
       'max_matrix_locations': 50
     },
+      'hazard': {
+      'max_distance': 5000000.0,
+      'max_locations': 20,
+      'max_matrix_distance': 400000.0,
+      'max_matrix_locations': 50
+    },
     'skadi': {
       'max_shape': 750000,
       'min_resample': 10.0
@@ -456,6 +462,12 @@ help_text = {
       'max_matrix_locations': 'Maximum number of input locations for a matrix'
     },
     'truck': {
+      'max_distance': 'Maximum b-line distance between all locations in meters',
+      'max_locations': 'Maximum number of input locations',
+      'max_matrix_distance': 'Maximum b-line distance between 2 most distant locations in meters for a matrix',
+      'max_matrix_locations': 'Maximum number of input locations for a matrix'
+    },
+    'hazard': {
       'max_distance': 'Maximum b-line distance between all locations in meters',
       'max_locations': 'Maximum number of input locations',
       'max_matrix_distance': 'Maximum b-line distance between 2 most distant locations in meters for a matrix',

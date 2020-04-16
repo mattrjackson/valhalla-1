@@ -93,7 +93,7 @@ public:
                               const uint32_t tz_index,
                               bool& has_time_restrictions) const
   {
-    return AllowedReverse(edge, pred, opp_edge, tile, opp_edgeid, current_time, tz_index, has_time_restrictions);
+    return cost_ -> AllowedReverse(edge, pred, opp_edge, tile, opp_edgeid, current_time, tz_index, has_time_restrictions);
   }                              
 
   /**
@@ -112,7 +112,7 @@ public:
    */
   virtual bool ModeSpecificAllowed(const baldr::AccessRestriction& restriction) const
   {
-    return ModeSpecificAllowed(restriction);
+    return cost_ -> ModeSpecificAllowed(restriction);
   }
 
   /**
@@ -251,10 +251,11 @@ private:
 HazardCost::HazardCost(const Costing costing, const Options& options) 
 : DynamicCost(options, TravelMode::kDrive)
 {
+   const CostingOptions& costing_options = options.costing_options(static_cast<int>(costing));
    sif::CostFactory<sif::DynamicCost> factory;
    factory.RegisterStandardCostingModels();
    Costing sub_costing;
-   valhalla::Costing_Enum_Parse(0 , &sub_costing);
+   valhalla::Costing_Enum_Parse(costing_options.sub_costing_option() , &sub_costing);
    cost_ = factory.Create(sub_costing, options);
 }
 
