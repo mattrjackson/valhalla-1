@@ -18,7 +18,7 @@ public:
    */
   HazardCost(const Costing costing, const Options& options);
 
-  virtual ~HazardCost();
+  virtual ~HazardCost(){}
 
 
   /**

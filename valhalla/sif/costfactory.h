@@ -89,6 +89,7 @@ public:
     Register(Costing::truck, CreateTruckCost);
     Register(Costing::transit, CreateTransitCost);
     Register(Costing::none_, CreateNoCost);
+    Register(Costing::hazard, CreateHazardCost);
   }
 
 private:
