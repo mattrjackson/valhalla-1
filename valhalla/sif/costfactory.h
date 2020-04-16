@@ -8,6 +8,7 @@
 #include <valhalla/proto/options.pb.h>
 #include <valhalla/sif/autocost.h>
 #include <valhalla/sif/bicyclecost.h>
+#include <valhalla/sif/hazardcost.h>
 #include <valhalla/sif/motorcyclecost.h>
 #include <valhalla/sif/motorscootercost.h>
 #include <valhalla/sif/nocost.h>

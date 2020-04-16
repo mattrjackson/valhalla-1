@@ -4,6 +4,7 @@ set(sources
   autocost.cc
   costconstraints.cc
   bicyclecost.cc
+  hazardcost.cc
   hierarchylimits.cc
   motorcyclecost.cc
   motorscootercost.cc

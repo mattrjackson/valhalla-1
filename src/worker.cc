@@ -802,6 +802,11 @@ void from_json(rapidjson::Document& doc, Options& options) {
         sif::ParseNoCostOptions(doc, costing_options_key, options.add_costing_options());
         break;
       }
+      case hazard: 
+      {
+        sif::ParseHazardCostOptions(doc, costing_options_key, options.add_costing_options());
+        break;
+      }
     }
   }
 
@@ -1000,6 +1005,7 @@ bool Costing_Enum_Parse(const std::string& costing, Costing* c) {
       {"auto_data_fix", Costing::auto_data_fix},
       {"none", Costing::none_},
       {"", Costing::none_},
+      {"hazard", Costing::hazard},
   };
   auto i = costings.find(costing);
   if (i == costings.cend())
@@ -1025,6 +1031,7 @@ const std::string& Costing_Enum_Name(const Costing costing) {
       {Costing::motorcycle, "motorcycle"},
       {Costing::auto_data_fix, "auto_data_fix"},
       {Costing::none_, "none"},
+      {Costing::hazard, "hazard"}
   };
   auto i = costings.find(costing);
   return i == costings.cend() ? empty : i->second;

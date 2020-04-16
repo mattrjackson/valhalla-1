@@ -46,6 +46,7 @@ enum Costing {
   auto_data_fix = 11;
   taxi = 12;
   none_ = 13;
+  hazard = 14;
 }
 
 message CostingConstraint{
@@ -112,6 +113,7 @@ message CostingOptions {
   repeated string filter_route_ids = 54;
   optional uint32 flow_mask = 55;
   repeated CostingConstraint costing_constraints = 56;
+  optional string sub_costing_option = 57;
 }
 
 message AvoidEdge {
