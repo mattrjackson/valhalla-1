@@ -130,6 +130,14 @@ struct CostConstraints {
   inline bool HasConstraints() const {
     return constraints_.size() > 0;
   }
+  CostingConstraint GetConstraint(size_t index)
+  {
+    return constraints_[index];
+  }
+  size_t size()
+  {
+    return constraints_.size();
+  }
 
 protected:
   std::vector<CostingConstraint> constraints_;

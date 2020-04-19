@@ -681,7 +681,7 @@ public:
   uint8_t flow_mask() const {
     return flow_mask_;
   }
-  std::shared_ptr<CostConstraints> GetConstraints() {
+  virtual std::shared_ptr<CostConstraints> GetConstraints() {
     return constraints_;
   }
 

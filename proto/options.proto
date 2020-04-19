@@ -114,6 +114,7 @@ message CostingOptions {
   optional uint32 flow_mask = 55;
   repeated CostingConstraint costing_constraints = 56;
   optional string sub_costing_option = 57;
+  optional float heuristic_multiplier = 58 [default = 0];
 }
 
 message AvoidEdge {
